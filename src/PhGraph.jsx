@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 const PhGraph = () => {
   const [phData, setPhData] = useState([]);
   const [chart, setChart] = useState(null);
-  const [error, setError] = useState(null); // State for error handling
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const plant = "PlantA";
     const date = "2023-09-02T14:30:00.000Z";
 
-    // Fetch pH data from your backend
+    // Fetch pH data 
     fetch(`/get-phvalues-perhour/${plant}/${date}`)
       .then((response) => {
         if (!response.ok) {
@@ -23,9 +23,9 @@ const PhGraph = () => {
       })
       .catch((error) => {
         console.error("Error fetching pH data:", error);
-        setError(error.message); // Set the error state
+        setError(error.message); 
       });
-  }, []); // This empty array means this effect runs only once, when the component mounts
+  }, []); 
 
   useEffect(() => {
     if (phData.length > 0) {
@@ -78,7 +78,7 @@ const PhGraph = () => {
   return (
     <div>
       {error ? (
-        <div>Error: {error}</div> // Display the error message if an error occurred
+        <div>Error: {error}</div> 
       ) : (
         <canvas id="myChart"></canvas>
       )}
