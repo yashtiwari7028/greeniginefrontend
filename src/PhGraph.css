@@ -12,6 +12,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+/* CSS styles for the chart container */
+.chart-container {
+  width: 100%; /* Set the width to fill its container */
+  height: 400px; /* Set the height as needed */
+  border: 1px solid #ddd; /* Add a border for visual separation */
+  margin-top: 20px; /* Adjust margin as needed */
+}
 
 .App-header {
   background-color: #282c34;
